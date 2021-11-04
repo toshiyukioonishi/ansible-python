@@ -14,12 +14,8 @@ services:
 - httpd
 - chrony
 users:
-- student1
-- student2
-- student3
-- student4
+- webadmin
+- upadmin
 users_comment:
-- "\u30ED\u30FC\u30AB\u30EB\u30E6\u30FC\u30B6"
-- "\u30ED\u30FC\u30AB\u30EB\u30E6\u30FC\u30B6"
-- "\u30ED\u30FC\u30AB\u30EB\u30E6\u30FC\u30B6"
-- "\u30ED\u30FC\u30AB\u30EB\u30E6\u30FC\u30B6"
+- WebAdminUser
+- ContentUPLoadUser

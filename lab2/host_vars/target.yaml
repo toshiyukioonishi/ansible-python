@@ -1,10 +1,15 @@
-cider: null
-dns: null
-firewalls: []
-gateway: null
-hostanme: null
-ip: null
-packages: []
-services: []
-users: []
-users_comment: []
+cider: 'cat '
+dns: 172.25.0.2
+firewalls:
+- mysql
+gateway: 172.25.2.1
+hostanme: target
+ip: 172.25.2.42
+packages:
+- mariadb
+services:
+- mariadb
+users:
+- dbadmin
+users_comment:
+- DBAdminUser

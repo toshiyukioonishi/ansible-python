@@ -26,13 +26,34 @@
         state: enabled
       with_items:
         - "{{ firewalls }}"
+    # Firewalld Service Restart
+    - name: restart firewalld
+      systemd:
+        state: restarted
+        name: firewalld
 
     # cloud instance hostname setting
     - name: cloud instance hostname preserve
       lineinfile:
         path: /etc/cloud/cloud.cfg
         line: "preserve_hostname: true"
-        
+    # Host Name Setting
+    - name: Host Name Setting
+      hostname:
+        name: "{{ hostname }}"
+
+    # nmcli NetWorkManger Setting(aws network setting using)
+    #- name: nmcli NetWorkManger Settings
+    #  nmcli:
+    #    conn_name: "{ nic_name }}"
+    #    ifname: eth0
+    #    type: ethernet
+    #    autoconnect: no
+    #    ip4: "{{ ip }}"
+    #    gw4: "{{ gateway }}"
+    #    dns4: "{{ dns }}"
+    #    state: present
+     
 #    - debug:
 #        msg: "{{ dummy }}"
 #    - name: Dev Test Code.

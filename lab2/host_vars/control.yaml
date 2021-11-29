@@ -12,8 +12,9 @@ packages:
 - php
 - chrony
 services:
-- httpd
-- chrony
+- http
+- https
+- ntp
 users:
 - comment: WebAdminUser
   name: webadmin

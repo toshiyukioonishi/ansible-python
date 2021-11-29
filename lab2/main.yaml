@@ -7,6 +7,7 @@
       yum:
         name: "{{ packages }}"
         state: latest
+
     # Local User setting
     - name: local user adding
       user: 
@@ -16,11 +17,15 @@
       with_items:
         - "{{ users }}"
       when: users is defined
+
     # FireWall Settings
-    #- name: FireWallServiceSettings
-      
-
-
+    - name: FireWallServiceSettings
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes  
+        state: enabled
+      with_items:
+        - "{{ firewalls }}"
 
     # cloud instance hostname setting
     - name: cloud instance hostname preserve
@@ -30,8 +35,8 @@
         
 #    - debug:
 #        msg: "{{ dummy }}"
-    - name: Dev Test Code.
-      debug:
-        msg: "{{ item.comment }}"
-      with_items:
-        - "{{ users }}"
+#    - name: Dev Test Code.
+#      debug:
+#        msg: "{{ item }}"
+#      with_items:
+#        - "{{ dummy }}"

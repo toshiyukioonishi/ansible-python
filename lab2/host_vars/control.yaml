@@ -3,6 +3,7 @@ dns: 172.25.0.2
 firewalls:
 - http
 - https
+- ntp
 gateway: 172.25.2.1
 hostanme: control
 ip: 172.25.2.118

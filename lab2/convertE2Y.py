@@ -50,14 +50,10 @@ def main():
     firewalls = getList(sheet,row_no=30,col_no=3,max_row_no=35)
     # 追加ユーザリストの取得
     users = getList(sheet,row_no=40,col_no=2,max_row_no=47)
-     # 追加ユーザリストのコメント取得
+    # 追加ユーザリストのコメント取得
     users_comment = getList(sheet,row_no=40,col_no=3,max_row_no=47)
-
-    print(users)
-    print(users_comment)
-    
+    # yaml 変換用複合ユーザリストの作成
     users_list = list()
- 
     for (user,comment) in zip(users,users_comment):
       user_tmp = {'name': user,'comment': comment}
       users_list.append(user_tmp)

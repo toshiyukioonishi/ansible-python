@@ -14,8 +14,9 @@ services:
 - httpd
 - chrony
 users:
-- webadmin
-- upadmin
-users_comment:
-- WebAdminUser
-- ContentUPLoadUser
+  comment:
+  - WebAdminUser
+  - ContentUPLoadUser
+  name:
+  - webadmin
+  - upadmin

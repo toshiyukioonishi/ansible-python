@@ -9,7 +9,8 @@ ip: 172.25.2.42
 packages:
 - mariadb
 services:
-- mariadb
+- mysql
+- ntp
 users:
 - comment: DBAdminUser
   name: dbadmin

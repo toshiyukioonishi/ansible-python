@@ -4,13 +4,12 @@ firewalls:
 - mysql
 - ntp
 gateway: 172.25.2.1
-hostanme: target
+hostname: target
 ip: 172.25.2.42
 packages:
 - mariadb
 services:
-- mysql
-- ntp
+- mariadb
 users:
 - comment: DBAdminUser
   name: dbadmin

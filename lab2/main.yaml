@@ -10,11 +10,17 @@
     # Local User setting
     - name: local user adding
       user: 
-        name: "{{ item }}"
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
         state: present
       with_items:
         - "{{ users }}"
       when: users is defined
+    # FireWall Settings
+    #- name: FireWallServiceSettings
+      
+
+
 
     # cloud instance hostname setting
     - name: cloud instance hostname preserve
@@ -24,8 +30,8 @@
         
 #    - debug:
 #        msg: "{{ dummy }}"
-#    - name: Dev Test Code.
-#      debug:
-#        msg: "{{ item }}"
-#      with_items:
-#        - "{{ dummy }}"
+    - name: Dev Test Code.
+      debug:
+        msg: "{{ item.comment }}"
+      with_items:
+        - "{{ users }}"

@@ -52,7 +52,16 @@ def main():
     users = getList(sheet,row_no=40,col_no=2,max_row_no=47)
      # 追加ユーザリストのコメント取得
     users_comment = getList(sheet,row_no=40,col_no=3,max_row_no=47)
+
+    print(users)
+    print(users_comment)
     
+    users_list = list()
+ 
+    for (user,comment) in zip(users,users_comment):
+      user_tmp = {'name': user,'comment': comment}
+      users_list.append(user_tmp)
+ 
     # yaml 出力データの整形
     out_data = {'hostanme': hostname.value,
                 'ip': ip.value,
@@ -62,7 +71,7 @@ def main():
                 'packages': packages,
                 'services': services,
                 'firewalls': firewalls,
-                'users': {'name': users,'comment': users_comment}
+                'users': users_list
                }
 
     # 出力ファイルの指定

@@ -5,13 +5,13 @@ import subprocess
 api = Flask(__name__)
 @api.route('/create',methods=['GET'])
 def create():
-    subprocess.run(['python3','convertE2Y.py'],shell=True)
+    subprocess.run(['python3','convertE2Y.py'],shell=False)
     print('yamlファイルを作成しました。')
     return make_response('success')
 
-@api.route('/ansible',methods=['GET'])
+@api.route('/ansible',methods=['GET'])S
 def ansible():
-    subprocess.run(['ansible-playbook','mai.yaml'],shell=True)
+    subprocess.run(['ansible-playbook','mai.yaml'],shell=False)
     print('Ansibleを実行しました。')
     return make_response('success')
 

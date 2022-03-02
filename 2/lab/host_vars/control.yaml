@@ -5,6 +5,7 @@ firewalls:
 - https
 - ntp
 gateway: 172.25.2.1
+hostname: control
 ip: 172.25.2.5
 packages:
 - httpd

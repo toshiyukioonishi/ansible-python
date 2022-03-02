@@ -56,6 +56,7 @@ def main():
  
     # yaml 出力データの整形
     out_data = {
+      'hostname': hostname.value,
       'ip': ip.value,
       'cider': cider.value,
       'gateway': gateway.value,

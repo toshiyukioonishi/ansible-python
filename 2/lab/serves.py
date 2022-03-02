@@ -9,9 +9,9 @@ def create():
     print('yamlファイルを作成しました。')
     return make_response('success')
 
-@api.route('/ansible',methods=['GET'])S
+@api.route('/ansible',methods=['GET'])
 def ansible():
-    subprocess.run(['ansible-playbook','mai.yaml'],shell=False)
+    subprocess.run(['ansible-playbook','main.yaml'],shell=False)
     print('Ansibleを実行しました。')
     return make_response('success')
 
